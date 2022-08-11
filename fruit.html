@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="fruit.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	<title>fruit machine</title>
+</head>
+<body id="body">
+	<div id="win"></div>
+		<input class="gear" id="settingButton" src="gear.png" type="image">
+	<div class="popUp" id="popUp">
+		<div class="settings">
+			<label><input checked class="radio" name="colour" onclick="changeColour('w')" type="radio" value="white">White<br></label> <label><input class="radio" name="colour" onclick="changeColour('r')" type="radio" value="red">Red<br></label> <span class="close">&times;</span>
+		</div>
+	</div>
+	<div class="slotMachine">
+		<div class="slot">
+			<div class="handel">
+				<button class="top" id="lever"></button>
+				<div class="shaft transform" id="shaft"></div>
+				<div class="base"></div>
+			</div>
+			<div class="slot1">
+				<div class="ico1" id="ico1"></div>
+			</div>
+			<div class="slot2">
+				<div class="ico2" id="ico2"></div>
+			</div>
+			<div class="slot3">
+				<div class="ico3" id="ico3"></div>
+			</div>
+		</div>
+	</div>
+	<script>
+	               var popUp = document.getElementById('popUp');
+	                 
+	               var button = document.getElementById("settingButton");
+
+	               var span = document.getElementsByClassName("close")[0];
+
+	               button.onclick = function() {
+	                    popUp.style.display = "block";
+	               }
+
+	               span.onclick = function() {
+	                    popUp.style.display = "none";
+	               }
+	</script> 
+	<script>
+	               var btn = document.getElementById("lever");
+
+	               btn.onclick = function() {
+	                  var slotOne =Math.floor(Math.random()*5);
+	                  var slotTwo = Math.floor(Math.random() * 5);
+	                  var slotThree= Math.floor(Math.random() * 5);
+	                  document.getElementById("shaft").style.height = "4em";
+	                  document.getElementById("lever").style.marginTop = "1em";
+	                  document.getElementById("shaft").style.marginTop = "4em";
+	                  if (slotOne == slotTwo || slotOne == slotThree || slotTwo == slotThree){
+	                      setTimeout(function(){
+	                        document.getElementById("win").style.visibility = "visible";
+	                        },2000);}
+	                          setTimeout(function(){                   
+	                          document.getElementById("win").style.visibility = "hidden";
+	                            },6000);
+
+	                   reset();
+	          if (slotOne == 0){
+	               document.getElementById("ico1").style.animation ="spin 1s steps(500)";
+	               document.getElementById("ico1").style.animationFillMode="forwards";
+	             }
+	           if (slotOne == 1){
+	               document.getElementById("ico1").style.animation ="spin1 1s steps(500)";
+	               document.getElementById("ico1").style.animationFillMode="forwards";
+	           }
+	           if (slotOne == 2){
+	               document.getElementById("ico1").style.animation ="spin2 1s steps(500)";
+	               document.getElementById("ico1").style.animationFillMode="forwards";
+	           }
+	             if (slotOne == 3){
+	               document.getElementById("ico1").style.animation ="spin3 1s steps(500)";
+	               document.getElementById("ico1").style.animationFillMode="forwards";
+	           }
+	             if (slotOne == 4){
+	               document.getElementById("ico1").style.animation ="spin4 1s steps(500)";
+	               document.getElementById("ico1").style.animationFillMode="forwards";
+	           }
+	              setTimeout(function(){                   
+	                if (slotTwo == 0){
+	               document.getElementById("ico2").style.animation ="spin 1s steps(500)";
+	               document.getElementById("ico2").style.animationFillMode="forwards";
+	             }
+	           if (slotTwo == 1){
+	               document.getElementById("ico2").style.animation ="spin1 1s steps(500)";
+	               document.getElementById("ico2").style.animationFillMode="forwards";
+	           }
+	           if (slotTwo == 2){
+	               document.getElementById("ico2").style.animation ="spin2 1s steps(500)";
+	               document.getElementById("ico2").style.animationFillMode="forwards";
+	           }
+	             if (slotTwo == 3){
+	               document.getElementById("ico2").style.animation ="spin3 1s steps(500)";
+	               document.getElementById("ico2").style.animationFillMode="forwards";
+	           }
+	             if (slotTwo == 4){
+	               document.getElementById("ico2").style.animation ="spin4 1s steps(500)";
+	               document.getElementById("ico2").style.animationFillMode="forwards";
+	           } 
+	           },500);
+	             setTimeout(function(){                   
+	            if (slotThree == 0){
+	               document.getElementById("ico3").style.animation ="spin 1s steps(500)";
+	               document.getElementById("ico3").style.animationFillMode="forwards";
+	             }
+	           if (slotThree == 1){
+	               document.getElementById("ico3").style.animation ="spin1 1s steps(500)";
+	               document.getElementById("ico3").style.animationFillMode="forwards";
+	           }
+	           if (slotThree == 2){
+	               document.getElementById("ico3").style.animation ="spin2 1s steps(500)";
+	               document.getElementById("ico3").style.animationFillMode="forwards";
+	           }
+	             if (slotThree == 3){
+	               document.getElementById("ico3").style.animation ="spin3 1s steps(500)";
+	               document.getElementById("ico3").style.animationFillMode="forwards";
+	           }
+	             if (slotThree == 4){
+	               document.getElementById("ico3").style.animation ="spin4 1s steps(500)";
+	               document.getElementById("ico3").style.animationFillMode="forwards";
+	           } 
+	           },1000);
+	           }
+	           function reset(){
+	              setTimeout(function(){
+	              document.getElementById("shaft").style.height = "8em";
+	              document.getElementById("lever").style.marginTop = "-4em";
+	              document.getElementById("shaft").style.marginTop = "0em";
+	              }, 1000);
+	        }     
+	</script> 
+	<script>
+	                  window.changeColour = function(value){
+	                  var color = document.body.style.backgroundColor;
+	                  if (value == "w")
+	                      color = "#ffffff"
+	                  else if (value == "r")
+	                       color = "#ed5555"
+	                  document.body.style.backgroundColor = color;
+	                  }
+	</script>
+</body>
+</html>

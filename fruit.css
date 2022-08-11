@@ -1,0 +1,167 @@
+body {
+	background-color: white;
+	font-family: 'Oswald', sans-serif;
+}
+.gear {
+	height: 6em;
+}
+.popUp {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+.settings {
+	border-radius: 20px;
+	font-size: 2em;
+	color: white;
+	background-color: black;
+	margin: 15% auto;
+	padding: 20px;
+	border: 10px solid white;
+	width: 20%;
+	height: 50%;
+	display: block;
+}
+label {
+	display: block;
+	background-color: black;
+}
+.radio {
+	margin-left: 20%;
+	margin-top: 5em;
+	border: 0px;
+	width: 20%;
+	height: 2em;
+}
+.close {
+	display: block;
+	background-color: black;
+	color: white;
+	text-align: center;
+	font-size: 5em;
+}
+.close:hover, .close:focus {
+	color: gray;
+	text-decoration: none;
+	cursor: pointer;
+}
+.slotMachine {
+	margin-left: 25%;
+	min-height: 30em;
+	max-height: 30em;
+	max-width: 47.5%;
+	min-width: 47.5%;
+	position: absolute;
+	;
+	display: block;
+	align-items: center;
+}
+.slot {
+	background-color: cadetblue;
+	min-height: 12em;
+	max-height: 12em;
+	min-width: 43em;
+	max-width: 43em;
+	border: 1em solid black;
+	border-radius: 3em;
+	margin: 0 auto;
+}
+.slot1, .slot2, .slot3 {
+	position: absolute;
+	overflow: hidden;
+	border: 0.5em solid black;
+	background-color: white;
+	width: 128px;
+	height: 128px;
+	margin-top: -18.5em;
+	border-radius: 2.5em;
+}
+.ico1, .ico2, .ico3 {
+	background: transparent url(sprite.png) 0 0 no-repeat;
+	background-size: cover;
+	width: 128px;
+	height: 128px;
+	background-repeat: repeat-y;
+}
+@keyframes spin {
+	100% {
+		background-position: 0 -640px;
+	}
+}
+@keyframes spin1 {
+	100% {
+		background-position: 0 -768px;
+	}
+}
+@keyframes spin2 {
+	100% {
+		background-position: 0 -896px;
+	}
+}
+@keyframes spin3 {
+	100% {
+		background-position: 0 -1024px;
+	}
+}
+@keyframes spin4 {
+	100% {
+		background-position: 0 -1151px;
+	}
+}
+.slot1 {
+	margin-left: 3em
+}
+.slot2 {
+	margin-left: 17em;
+}
+.slot3 {
+	margin-left: 31em
+}
+.base {
+	border: 0.5em solid black;
+	border-radius: 10px 0px 0px 10px;
+	background-color: black;
+	width: 6em;
+	height: 3em;
+	position: absolute;
+	margin-left: -7em;
+	margin-top: 5.5em;
+}
+.shaft {
+	position: absolute;
+	background-color: black;
+	width: 1em;
+	height: 8em;
+	margin-left: -5em;
+}
+.top {
+	cursor: pointer;
+	z-index: 1;
+	position: absolute;
+	height: 5em;
+	width: 5em;
+	border-radius: 5em;
+	background-color: cadetblue;
+	border: 0.5em solid black;
+	margin-left: -7.85em;
+	margin-top: -4em;
+}
+.handel {
+	height: 20em;
+}
+.shaft, .top {
+	transition: all 1s ease;
+}
+#win {
+	visibility: hidden;
+	background-image: url("confetti.gif");
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	position: absolute;
+}
